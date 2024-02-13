@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
         btnClose = findViewById(R.id.btnClose)
 
+
         btnClose.setOnClickListener {
             finishAffinity()
         }
