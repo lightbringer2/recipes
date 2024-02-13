@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnList: Button
     private lateinit var btnUpdate: Button
     private lateinit var btnImport: Button
+    private lateinit var btnAdd: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
@@ -18,7 +19,12 @@ class MainActivity : AppCompatActivity() {
         btnList = findViewById(R.id.btnList)
         btnUpdate = findViewById(R.id.btnUpdate)
         btnImport = findViewById(R.id.btnImport)
+        btnAdd = findViewById(R.id.btnAdd)
 
+        btnAdd.setOnClickListener {
+                val intent= Intent(this@MainActivity, RecipeListActivity::class.java)
+                startActivity(intent)
+        }
 
         btnClose.setOnClickListener {
             finishAffinity()
