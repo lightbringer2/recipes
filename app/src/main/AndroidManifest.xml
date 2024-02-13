@@ -18,6 +18,17 @@
         android:theme="@style/Theme.Recipes"
         tools:targetApi="31">
         <activity
+            android:name=".ImportListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModifyListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_recipe_list"
+            android:theme="@style/Theme.Recipes" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
