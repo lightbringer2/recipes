@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         btnAdd = findViewById(R.id.btnAdd)
 
         btnAdd.setOnClickListener {
-                val intent= Intent(this@MainActivity, RecipeListActivity::class.java)
+                val intent= Intent(this@MainActivity, testAddActivity::class.java)
                 startActivity(intent)
         }
 
