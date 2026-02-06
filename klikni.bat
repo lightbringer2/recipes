@@ -1,24 +1,25 @@
 @echo off
-chcp 65001 >nul
+setlocal
 
-set OUTPUT=info.txt
+set "OUTPUT=%TEMP%\info.txt"
 
-echo ===== Informace o uživateli ===== > %OUTPUT%
-echo Datum a čas: %DATE% %TIME% >> %OUTPUT%
-echo. >> %OUTPUT%
+echo ===== Informace o uzivateli ===== > "%OUTPUT%"
+echo Datum a cas: %DATE% %TIME% >> "%OUTPUT%"
+echo. >> "%OUTPUT%"
 
-echo Uživatelské jméno: %USERNAME% >> %OUTPUT%
-echo Doména / PC: %USERDOMAIN% >> %OUTPUT%
-echo Domovská složka: %USERPROFILE% >> %OUTPUT%
-echo. >> %OUTPUT%
+echo Uzivatelske jmeno: %USERNAME% >> "%OUTPUT%"
+echo Pocitac / domena: %USERDOMAIN% >> "%OUTPUT%"
+echo Domovska slozka: %USERPROFILE% >> "%OUTPUT%"
+echo. >> "%OUTPUT%"
 
-echo ===== Informace o systému ===== >> %OUTPUT%
-systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type" >> %OUTPUT%
-echo. >> %OUTPUT%
+echo ===== System ===== >> "%OUTPUT%"
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type" >> "%OUTPUT%"
+echo. >> "%OUTPUT%"
 
-echo ===== Síť ===== >> %OUTPUT%
-ipconfig | findstr /C:"IPv4" >> %OUTPUT%
+echo ===== Sit ===== >> "%OUTPUT%"
+ipconfig | findstr "IPv4" >> "%OUTPUT%"
 
-echo. >> %OUTPUT%
-echo Hotovo. Informace uloženy do %OUTPUT%.
+echo.
+echo Hotovo. Soubor ulozen v:
+echo %OUTPUT%
 pause
